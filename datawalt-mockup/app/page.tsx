@@ -6,23 +6,64 @@ export default function Home() {
       {/* Navbar */}
       <nav className="bg-white border-b border-gray-100 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-8">
-            <div className="text-2xl font-bold" style={{ color: 'var(--datawalt-red)' }}>
-              DataWalt
-            </div>
-            <div className="hidden md:flex space-x-6 text-gray-600">
-              <a href="#bi" className="hover:text-gray-900">BI</a>
-              <a href="#heuristics" className="hover:text-gray-900">Heuristics</a>
-              <a href="#agents" className="hover:text-gray-900">Agents</a>
-              <a href="#about" className="hover:text-gray-900">Acerca de</a>
-            </div>
+          <div className="text-2xl font-bold" style={{ color: 'var(--datawalt-red)' }}>
+            DataWalt
           </div>
-          <div className="flex space-x-4">
-            <button 
-              className="px-6 py-2 text-gray-600 hover:text-gray-900"
-            >
-              Iniciar sesión
-            </button>
+          
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#home" className="text-gray-600 hover:text-gray-900 font-medium">
+              HOME
+            </a>
+            
+            {/* Productos Dropdown */}
+            <div className="relative group">
+              <button className="text-gray-600 hover:text-gray-900 font-medium flex items-center">
+                PRODUCTOS
+                <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <a href="#bi" className="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                    BI - Visualiza el presente
+                  </a>
+                  <a href="#heuristics" className="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                    Heuristics - Optimiza el futuro
+                  </a>
+                  <a href="#agents" className="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                    Agents - Agentes personalizados
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Quiénes Somos Dropdown */}
+            <div className="relative group">
+              <button className="text-gray-600 hover:text-gray-900 font-medium flex items-center">
+                QUIÉNES SOMOS
+                <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <a href="#datawalt" className="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                    DataWalt
+                  </a>
+                  <a href="#team" className="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                    Team
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <a href="#blog" className="text-gray-600 hover:text-gray-900 font-medium">
+              BLOG
+            </a>
+          </div>
+
+          <div>
             <button 
               className="px-6 py-2 text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
               style={{ backgroundColor: 'var(--datawalt-red)' }}

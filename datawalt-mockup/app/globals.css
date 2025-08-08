@@ -29,3 +29,86 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Infinite scroll animations - Estilo Vambe */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-right:hover,
+.animate-scroll-left:hover {
+  animation-play-state: paused;
+}
+
+/* Animaciones para el extractor WARP */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 6s linear infinite;
+}
+
+/* Clip path para la flecha */
+.clip-arrow {
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
+}
+
+/* Click Spark Animation */
+@keyframes sparkParticle {
+  0% {
+    transform: rotate(var(--spark-angle, 0deg)) translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(var(--spark-angle, 0deg)) translateY(-40px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.animate-spark-particle {
+  animation: sparkParticle 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}

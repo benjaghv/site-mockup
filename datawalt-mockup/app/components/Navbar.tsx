@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
@@ -23,18 +25,21 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 bg-white border-b border-gray-300 shadow-md px-6 py-4 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <img 
+          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+            <Image 
               src="/assets/Logo.png"
               alt="DataWalt Logo"
+              width={120}
+              height={40}
+              priority
               className="h-10 w-auto"
             />
-          </a>
+          </Link>
         </div>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-          <a 
+          <Link 
             href="/" 
             className={`font-medium transition-colors ${
               isActive('/') 
@@ -43,7 +48,7 @@ export default function Navbar() {
             }`}
           >
             HOME
-          </a>
+          </Link>
           
           {/* Productos Dropdown */}
           <div className="relative group">
@@ -61,36 +66,39 @@ export default function Navbar() {
             </button>
             <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div className="py-2">
-                <a 
+                <Link 
                   href="/bi" 
                   className={`block px-4 py-2 hover:bg-gray-50 transition-colors ${
                     isActive('/bi') 
                       ? 'text-red-500' 
                       : 'text-gray-600 hover:text-red-500'
                   }`}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   BI - Visualiza el presente
-                </a>
-                <a 
+                </Link>
+                <Link 
                   href="/heuristics" 
                   className={`block px-4 py-2 hover:bg-gray-50 transition-colors ${
                     isActive('/heuristics') 
                       ? 'text-red-500' 
                       : 'text-gray-600 hover:text-red-500'
                   }`}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Heuristics - Optimiza el futuro
-                </a>
-                <a 
+                </Link>
+                <Link 
                   href="/agents" 
                   className={`block px-4 py-2 hover:bg-gray-50 transition-colors ${
                     isActive('/agents') 
                       ? 'text-red-500' 
                       : 'text-gray-600 hover:text-red-500'
                   }`}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Agents - Agentes personalizados
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -111,31 +119,33 @@ export default function Navbar() {
             </button>
             <div className="absolute top-full left-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div className="py-2">
-                <a 
+                <Link 
                   href="/datawalt" 
                   className={`block px-4 py-2 hover:bg-gray-50 transition-colors ${
                     isActive('/datawalt') 
                       ? 'text-red-500' 
                       : 'text-gray-600 hover:text-red-500'
                   }`}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   DataWalt
-                </a>
-                <a 
+                </Link>
+                <Link 
                   href="/team" 
                   className={`block px-4 py-2 hover:bg-gray-50 transition-colors ${
                     isActive('/team') 
                       ? 'text-red-500' 
                       : 'text-gray-600 hover:text-red-500'
                   }`}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Team
-                </a>
+                </Link>
               </div>
             </div>
           </div>
 
-          <a 
+          <Link 
             href="/blog" 
             className={`font-medium transition-colors ${
               isActive('/blog') 
@@ -144,7 +154,7 @@ export default function Navbar() {
             }`}
           >
             BLOG
-          </a>
+          </Link>
         </div>
 
         {/* Desktop/Tablet CTA */}
@@ -180,7 +190,7 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a
+            <Link
               href="/"
               className={`block px-3 py-2 text-base font-medium transition-colors ${
                 isActive('/') 
@@ -190,7 +200,7 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               HOME
-            </a>
+            </Link>
             
             {/* Mobile Productos */}
             <div className="px-3 py-2">
@@ -200,7 +210,7 @@ export default function Navbar() {
                 PRODUCTOS
               </div>
               <div className="pl-4 space-y-1">
-                <a
+                <Link
                   href="/bi"
                   className={`block py-1 text-sm transition-colors ${
                     isActive('/bi') 
@@ -210,8 +220,8 @@ export default function Navbar() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   BI - Visualiza el presente
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/heuristics"
                   className={`block py-1 text-sm transition-colors ${
                     isActive('/heuristics') 
@@ -221,8 +231,8 @@ export default function Navbar() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Heuristics - Optimiza el futuro
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/agents"
                   className={`block py-1 text-sm transition-colors ${
                     isActive('/agents') 
@@ -232,7 +242,7 @@ export default function Navbar() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Agents - Agentes personalizados
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -244,7 +254,7 @@ export default function Navbar() {
                 QUIÉNES SOMOS
               </div>
               <div className="pl-4 space-y-1">
-                <a
+                <Link
                   href="/datawalt"
                   className={`block py-1 text-sm transition-colors ${
                     isActive('/datawalt') 
@@ -254,8 +264,8 @@ export default function Navbar() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   DataWalt
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/team"
                   className={`block py-1 text-sm transition-colors ${
                     isActive('/team') 
@@ -265,11 +275,11 @@ export default function Navbar() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Team
-                </a>
+                </Link>
               </div>
             </div>
 
-            <a
+            <Link
               href="/blog"
               className={`block px-3 py-2 text-base font-medium transition-colors ${
                 isActive('/blog') 
@@ -279,7 +289,7 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               BLOG
-            </a>
+            </Link>
 
             {/* Mobile CTA */}
             <div className="px-3 py-2">

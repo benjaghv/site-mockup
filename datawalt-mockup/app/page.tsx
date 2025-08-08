@@ -1,6 +1,6 @@
 'use client';
 
-import Image from "next/image";
+// import Image from "next/image";
 import Navbar from "./components/Navbar";
 import ClickSpark from "./components/ClickSpark";
 import { useState } from "react";
@@ -371,7 +371,7 @@ export default function Home() {
               </div>
               <div className="mx-8 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
                 <div className="flex items-center justify-center h-16">
-                  <div className="text-3xl font-bold" style={{ color: 'var(--datawalt-purple)' }}>O'NEILL</div>
+                  <div className="text-3xl font-bold" style={{ color: 'var(--datawalt-purple)' }}>O&apos;NEILL</div>
                 </div>
               </div>
               <div className="mx-8 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
@@ -440,7 +440,7 @@ export default function Home() {
               </div>
               <div className="mx-8 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
                 <div className="flex items-center justify-center h-16">
-                  <div className="text-3xl font-bold" style={{ color: 'var(--datawalt-purple)' }}>O'NEILL</div>
+                  <div className="text-3xl font-bold" style={{ color: 'var(--datawalt-purple)' }}>O&apos;NEILL</div>
                 </div>
               </div>
               <div className="mx-8 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
@@ -515,7 +515,7 @@ export default function Home() {
                 </div>
                 <div className="mx-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
                   <div className="flex items-center justify-center h-12">
-                    <div className="text-sm font-bold" style={{ color: 'var(--datawalt-purple)' }}>O'NEILL</div>
+                  <div className="text-sm font-bold" style={{ color: 'var(--datawalt-purple)' }}>O&apos;NEILL</div>
                   </div>
                 </div>
                 <div className="mx-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
@@ -549,7 +549,7 @@ export default function Home() {
                 </div>
                 <div className="mx-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
                   <div className="flex items-center justify-center h-12">
-                    <div className="text-sm font-bold" style={{ color: 'var(--datawalt-purple)' }}>O'NEILL</div>
+                    <div className="text-sm font-bold" style={{ color: 'var(--datawalt-purple)' }}>O&apos;NEILL</div>
                   </div>
                 </div>
                 <div className="mx-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
